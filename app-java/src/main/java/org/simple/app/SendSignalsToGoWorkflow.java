@@ -5,10 +5,10 @@ import io.temporal.client.WorkflowOptions;
 import io.temporal.serviceclient.WorkflowServiceStubs;
 import io.temporal.worker.Worker;
 import io.temporal.worker.WorkerFactory;
-import io.temporal.workflow.ExternalWorkflowStub;
-import io.temporal.workflow.Workflow;
-import io.temporal.workflow.WorkflowInterface;
-import io.temporal.workflow.WorkflowMethod;
+import io.temporal.workflow.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SendSignalsToGoWorkflow {
     static final String TASK_QUEUE = "simple-queue";
@@ -17,17 +17,38 @@ public class SendSignalsToGoWorkflow {
     @WorkflowInterface
     public interface SimpleWorkflow {
         @WorkflowMethod
-        void exec();
+        String exec();
+
+        @SignalMethod(name = "fromgo")
+        void receiveMessage(String message);
     }
 
     public static class SimpleWorkflowImpl implements SimpleWorkflow {
+        List<String> messageQueue = new ArrayList<>(10);
+
         @Override
-        public void exec() {
+        public String exec() {
             ExternalWorkflowStub externalWorkflowStub = Workflow.newUntypedExternalWorkflowStub("simple_workflow-go");
 
+            // Send 10 signals to Go workflow
             for(int i=0; i < 10; i++) {
                 externalWorkflowStub.signal("simplesignal", "Hello from Java Workflow: " + i);
             }
+
+            // Receive 10 signals to Go workflow
+            Workflow.await(() -> messageQueue.size() == 10);
+
+            String result = "";
+            for(String m : messageQueue) {
+                result += m + "\n";
+            }
+
+            return result;
+        }
+
+        @Override
+        public void receiveMessage(String message) {
+            messageQueue.add(message);
         }
     }
 
@@ -45,7 +66,7 @@ public class SendSignalsToGoWorkflow {
         // Create the workflow client stub. It is used to start the workflow execution.
         SimpleWorkflow workflow = client.newWorkflowStub(SimpleWorkflow.class, workflowOptions);
 
-        workflow.exec();
+        System.out.println( workflow.exec() );
 
         System.exit(0);
     }
