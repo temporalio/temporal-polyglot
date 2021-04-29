@@ -4,7 +4,13 @@ This demo shows a Java workflow signalling a Go workflow
 
 ### Running the demo
 
-1) Start the Go worker and starter:
+1) Start the Temporal Server:
+```shell script
+git clone https://github.com/temporalio/docker-compose.git
+cd  docker-compose
+```
+
+2) Start the Go worker and starter:
 ```shell script
 cd app-go
 go run worker/main.go
