@@ -11,7 +11,7 @@ import io.temporal.workflow.WorkflowInterface;
 import io.temporal.workflow.WorkflowMethod;
 
 public class SendSignalsToGoWorkflow {
-    static final String TASK_QUEUE = "simple-queue222";
+    static final String TASK_QUEUE = "simple-queue";
     static final String WORKFLOW_ID = "SimpleWorkflowJava";
 
     @WorkflowInterface
