@@ -1,6 +1,6 @@
 ## Temporal Simple Polyglot example
 
-This demo shows a Java workflow signalling a Go workflow
+This demo shows a Java workflow signalling a Go workflow and vice versa
 
 ### Running the demo
 
@@ -25,7 +25,7 @@ mvn compile exec:java -Dexec.mainClass="org.simple.app.SendSignalsToGoWorkflow"
 ```
 
 ### Seeing the results:
-Look at the logs printed in the same window where you ran the Go workflow starter, you should ge:
+1) Look at the logs printed in the same window where you ran the Go workflow starter, you should ge:
 
 ```shell script
 Workflow result: Hello from Java Workflow: 0
@@ -38,4 +38,18 @@ Hello from Java Workflow: 6
 Hello from Java Workflow: 7
 Hello from Java Workflow: 8
 Hello from Java Workflow: 9
+```
+
+2) Look at the results of our Java workflow, you should get:
+```shell script
+Hello from Go workflow: 0
+Hello from Go workflow: 1
+Hello from Go workflow: 2
+Hello from Go workflow: 3
+Hello from Go workflow: 4
+Hello from Go workflow: 5
+Hello from Go workflow: 6
+Hello from Go workflow: 7
+Hello from Go workflow: 8
+Hello from Go workflow: 9
 ```
