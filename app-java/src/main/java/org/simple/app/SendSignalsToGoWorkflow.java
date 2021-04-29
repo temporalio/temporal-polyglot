@@ -35,7 +35,7 @@ public class SendSignalsToGoWorkflow {
                 externalWorkflowStub.signal("simplesignal", "Hello from Java Workflow: " + i);
             }
 
-            // Receive 10 signals to Go workflow
+            // Receive 10 signals from Go workflow
             Workflow.await(() -> messageQueue.size() == 10);
 
             String result = "";
