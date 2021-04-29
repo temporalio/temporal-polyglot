@@ -8,6 +8,7 @@ This demo shows a Java workflow signalling a Go workflow
 ```shell script
 git clone https://github.com/temporalio/docker-compose.git
 cd  docker-compose
+docker compose up
 ```
 
 2) Start the Go worker and starter:
