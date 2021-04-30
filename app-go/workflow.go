@@ -28,7 +28,7 @@ func Workflow(ctx workflow.Context, name string) (string, error) {
 	}
 	// Send 10 signals to Java workflow
 	for i := 0; i < 10; i++ {
-		workflow.SignalExternalWorkflow(ctx, "SimpleWorkflowJava", "", "fromgo", "Hello from Go workflow: "+strconv.Itoa(i)).Get(ctx, nil)
+		workflow.SignalExternalWorkflow(ctx, "SimpleWorkflowJava", "", "receiveMessage", "Hello from Go workflow: "+strconv.Itoa(i)).Get(ctx, nil)
 	}
 
 	logger.Info("Simple Workflow ended with results.",

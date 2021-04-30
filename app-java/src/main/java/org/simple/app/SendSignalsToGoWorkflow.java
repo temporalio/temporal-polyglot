@@ -19,7 +19,7 @@ public class SendSignalsToGoWorkflow {
         @WorkflowMethod
         String exec();
 
-        @SignalMethod(name = "fromgo")
+        @SignalMethod
         void receiveMessage(String message);
     }
 
