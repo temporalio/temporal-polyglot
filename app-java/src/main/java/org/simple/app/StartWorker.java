@@ -4,6 +4,7 @@ import io.temporal.client.WorkflowClient;
 import io.temporal.serviceclient.WorkflowServiceStubs;
 import io.temporal.worker.Worker;
 import io.temporal.worker.WorkerFactory;
+import org.simple.app.activity.SimpleActivityImpl;
 import org.simple.app.workflow.SimpleWorkflowImpl;
 
 public class StartWorker {
@@ -14,7 +15,12 @@ public class StartWorker {
         WorkerFactory factory = WorkerFactory.newInstance(client);
 
         Worker worker = factory.newWorker("simple-queue");
+
+        // register the java workflow
         worker.registerWorkflowImplementationTypes(SimpleWorkflowImpl.class);
+
+        // register the java activity
+        worker.registerActivitiesImplementations(new SimpleActivityImpl());
 
         factory.start();
 

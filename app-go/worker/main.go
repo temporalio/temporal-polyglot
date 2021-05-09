@@ -19,7 +19,11 @@ func main() {
 
 	w := worker.New(c, "simple-queue", worker.Options{})
 
+	// register go workflow
 	w.RegisterWorkflow(simple.Workflow)
+
+	// register go activity
+	w.RegisterActivity(simple.GoActivity)
 
 	err = w.Run(worker.InterruptCh())
 	if err != nil {

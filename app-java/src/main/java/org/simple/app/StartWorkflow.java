@@ -20,6 +20,5 @@ public class StartWorkflow {
 
         System.out.println( workflow.exec() );
 
-        System.exit(0);
     }
 }
