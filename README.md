@@ -18,10 +18,11 @@ go run worker/main.go
 go run starter/main.go
 ```
 
-3) Start the Java workflow:
+3) Start the Java worker and starter:
 ```shell script
 cd app-java
-mvn compile exec:java -Dexec.mainClass="org.simple.app.SendSignalsToGoWorkflow"
+mvn compile exec:java -Dexec.mainClass="org.simple.app.StartWorker"
+mvn compile exec:java -Dexec.mainClass="org.simple.app.StartWorkflow"
 ```
 
 ### Seeing the results:
