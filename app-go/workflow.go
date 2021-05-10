@@ -2,6 +2,7 @@ package simple
 
 import (
 	"fmt"
+	"log"
 	"strconv"
 	"time"
 
@@ -37,8 +38,7 @@ func Workflow(ctx workflow.Context, name string) (string, error) {
 	err := workflow.SetQueryHandler(ctx, "queryGoInfo", func(input []byte) (string, error) {
 		return queryResult, nil
 	})
-	if err != nil {
-		logger.Info("SetQueryHandler failed: " + err.Error())
+		log.Fatalln("SetQueryHandler failed", err.Error())
 	}
 
 	// Receive 10 signals from Java workflow

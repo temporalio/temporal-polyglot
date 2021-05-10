@@ -2,6 +2,7 @@ package simple
 
 import (
 	"context"
+	"log"
 
 	"go.temporal.io/sdk/activity"
 	"go.temporal.io/sdk/client"
@@ -14,7 +15,7 @@ func GoActivity(ctx context.Context, from string) (string, error) {
 	// Query Java Workflow
 	c, err := client.NewClient(client.Options{})
 	if err != nil {
-		logger.Info("Unable to create client", err)
+		log.Fatalln("Unable to create client", err.Error())
 	}
 	resp, err := c.QueryWorkflow(context.Background(), "SimpleWorkflowJava", "", "queryJavaInfo")
 	var qr string
