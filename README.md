@@ -2,10 +2,8 @@
 
 This demo shows:
 * How ho signal a Go Workflow from a Java workflow (and vice versa)
-* How to invoke an Activity written in Go from a Workflow written in Java
-* How to invoke an Activity written in Java from a Workflow written in Go
-* How to query a Go Workflow from a Java Activity
-* How to query a Java Workflow from a Go Activity
+* How to invoke an Activity written in Go from a Workflow written in Java (and vice versa)
+* How to query a Go Workflow from a Java Activity (and vice versa)
 
 ### Running the demo
 
