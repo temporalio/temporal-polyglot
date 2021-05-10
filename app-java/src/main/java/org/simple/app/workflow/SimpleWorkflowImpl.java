@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class SimpleWorkflowImpl implements SimpleWorkflow {
-    List<String> messageQueue = new ArrayList<>(10);
-    String info = "This is a simple Java Workflow";
+    private final List<String> messageQueue = new ArrayList<>(10);
+    private static final String INFO = "This is a simple Java Workflow";
 
 
     @Override
@@ -57,6 +57,6 @@ public class SimpleWorkflowImpl implements SimpleWorkflow {
 
     @Override
     public String getInfo() {
-        return info;
+        return INFO;
     }
 }

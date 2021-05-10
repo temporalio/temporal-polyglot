@@ -6,13 +6,17 @@ import io.temporal.serviceclient.WorkflowServiceStubs;
 import org.simple.app.workflow.SimpleWorkflow;
 
 public class StartWorkflow {
+
+    public static final String TASK_QUEUE = "simple-queue-java";
+    public static final String WORKFLOW_ID = "SimpleWorkflowJava";
+
     public static void main(String[] args) {
 
         WorkflowServiceStubs service = WorkflowServiceStubs.newInstance();
         WorkflowClient client = WorkflowClient.newInstance(service);
 
         WorkflowOptions goWorkflowOptions =
-                WorkflowOptions.newBuilder().setTaskQueue("simple-queue-java").setWorkflowId("SimpleWorkflowJava").build();
+                WorkflowOptions.newBuilder().setTaskQueue(TASK_QUEUE).setWorkflowId(WORKFLOW_ID).build();
 
         // Create the workflow client stub. It is used to start the workflow execution.
         SimpleWorkflow workflow = client.newWorkflowStub(SimpleWorkflow.class, goWorkflowOptions);
