@@ -17,7 +17,7 @@ func main() {
 	}
 	defer c.Close()
 
-	w := worker.New(c, "simple-queue", worker.Options{})
+	w := worker.New(c, "simple-queue-go", worker.Options{})
 
 	// register go workflow
 	w.RegisterWorkflow(simple.Workflow)

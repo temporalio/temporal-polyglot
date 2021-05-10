@@ -11,14 +11,20 @@ public class StartWorkflow {
         WorkflowServiceStubs service = WorkflowServiceStubs.newInstance();
         WorkflowClient client = WorkflowClient.newInstance(service);
 
-
-        WorkflowOptions workflowOptions =
-                WorkflowOptions.newBuilder().setTaskQueue("simple-queue").setWorkflowId("SimpleWorkflowJava").build();
+        WorkflowOptions goWorkflowOptions =
+                WorkflowOptions.newBuilder().setTaskQueue("simple-queue-java").setWorkflowId("SimpleWorkflowJava").build();
 
         // Create the workflow client stub. It is used to start the workflow execution.
-        SimpleWorkflow workflow = client.newWorkflowStub(SimpleWorkflow.class, workflowOptions);
+        SimpleWorkflow workflow = client.newWorkflowStub(SimpleWorkflow.class, goWorkflowOptions);
 
         System.out.println( workflow.exec() );
+
+        try {
+            Thread.sleep(10 * 1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.exit(0);
 
     }
 }

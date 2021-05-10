@@ -4,6 +4,8 @@ This demo shows:
 * How ho signal a Go Workflow from a Java workflow (and vice versa)
 * How to invoke an Activity written in Go from a Workflow written in Java
 * How to invoke an Activity written in Java from a Workflow written in Go
+* How to query a Go Workflow from a Java Activity
+* How to query a Java Workflow from a Go Activity
 
 ### Running the demo
 
@@ -42,7 +44,7 @@ Hello from Java Workflow: 6
 Hello from Java Workflow: 7
 Hello from Java Workflow: 8
 Hello from Java Workflow: 9
-Java SimpleActivity - hello from: GoWorkflow
+Java SimpleActivity - hello from: GoWorkflow Query result: This is a simple Go Workflow
 ```
 
 2) Look at the results of our Java workflow, you should get:
@@ -57,5 +59,5 @@ Hello from Go workflow: 6
 Hello from Go workflow: 7
 Hello from Go workflow: 8
 Hello from Go workflow: 9
-Go Activity - hello from: JavaWorkflow
+Go Activity - hello from: JavaWorkflow Query result: This is a simple Java Workflow
 ```

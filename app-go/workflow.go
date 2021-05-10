@@ -16,7 +16,7 @@ const (
 func Workflow(ctx workflow.Context, name string) (string, error) {
 
 	ao := workflow.ActivityOptions{
-		StartToCloseTimeout: 1 * time.Minute,
+		StartToCloseTimeout: 2 * time.Minute,
 	}
 
 	ctx = workflow.WithActivityOptions(ctx, ao)
@@ -28,7 +28,18 @@ func Workflow(ctx workflow.Context, name string) (string, error) {
 
 	var retValues string
 	retValues = "\n"
+
+	// Setup signal Channel
 	simpleCh := workflow.GetSignalChannel(ctx, SimpleSignalName)
+
+	// Setup Query Handler
+	queryResult := "This is a simple Go Workflow"
+	err := workflow.SetQueryHandler(ctx, "queryGoInfo", func(input []byte) (string, error) {
+		return queryResult, nil
+	})
+	if err != nil {
+		logger.Info("SetQueryHandler failed: " + err.Error())
+	}
 
 	// Receive 10 signals from Java workflow
 	for i := 0; i < 10; i++ {
@@ -45,7 +56,12 @@ func Workflow(ctx workflow.Context, name string) (string, error) {
 
 	// Call Java activity
 	var result string
-	err := workflow.ExecuteActivity(ctx, "javaSayHello", "GoWorkflow").Get(ctx, &result)
+	aoj := workflow.ActivityOptions{
+		TaskQueue:           "simple-queue-java",
+		StartToCloseTimeout: 5 * time.Second,
+	}
+	ctx = workflow.WithActivityOptions(ctx, aoj)
+	err = workflow.ExecuteActivity(ctx, "SayHello", "GoWorkflow").Get(ctx, &result)
 	logger.Info(fmt.Sprintf("Java Activity returns %v, %v", result, err))
 	retValues += result + "\n"
 

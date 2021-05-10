@@ -5,6 +5,6 @@ import io.temporal.activity.ActivityMethod;
 
 @ActivityInterface
 public interface SimpleActivity {
-    @ActivityMethod(name = "javaSayHello")
+    @ActivityMethod
     String sayHello(String from);
 }

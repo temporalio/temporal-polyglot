@@ -14,7 +14,7 @@ public class StartWorker {
         WorkflowClient client = WorkflowClient.newInstance(service);
         WorkerFactory factory = WorkerFactory.newInstance(client);
 
-        Worker worker = factory.newWorker("simple-queue");
+        Worker worker = factory.newWorker("simple-queue-java");
 
         // register the java workflow
         worker.registerWorkflowImplementationTypes(SimpleWorkflowImpl.class);
