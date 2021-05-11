@@ -1,11 +1,6 @@
 package org.simple.app.workflow;
 
 import io.temporal.activity.ActivityOptions;
-import io.temporal.api.common.v1.WorkflowExecution;
-import io.temporal.client.WorkflowClient;
-import io.temporal.client.WorkflowOptions;
-import io.temporal.client.WorkflowStub;
-import io.temporal.serviceclient.WorkflowServiceStubs;
 import io.temporal.workflow.ActivityStub;
 import io.temporal.workflow.ExternalWorkflowStub;
 import io.temporal.workflow.Workflow;
@@ -13,7 +8,6 @@ import io.temporal.workflow.Workflow;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class SimpleWorkflowImpl implements SimpleWorkflow {
     private final List<String> messageQueue = new ArrayList<>(10);
@@ -23,11 +17,11 @@ public class SimpleWorkflowImpl implements SimpleWorkflow {
     @Override
     public String exec() {
 
-        ExternalWorkflowStub externalWorkflowStub = Workflow.newUntypedExternalWorkflowStub("simple-workflow-go");
+        ExternalWorkflowStub externalGoWorkflowStub = Workflow.newUntypedExternalWorkflowStub("simple-workflow-go");
 
-        // Send 10 signals to Go worksflow
+        // Send 10 signals to Go workflow
         for(int i=0; i < 10; i++) {
-            externalWorkflowStub.signal("simplesignal", "Hello from Java Workflow: " + i);
+            externalGoWorkflowStub.signal("simplesignal", "Hello from Java Workflow: " + i);
         }
 
         // Receive 10 signals from Go workflow
@@ -46,6 +40,13 @@ public class SimpleWorkflowImpl implements SimpleWorkflow {
                         .build();
         ActivityStub goActivity = Workflow.newUntypedActivityStub(options);
         result += goActivity.execute("GoActivity", String.class, "JavaWorkflow");
+
+        ExternalWorkflowStub externalPHPWorkflowStub = Workflow.newUntypedExternalWorkflowStub("simple-workflow-php");
+
+        // Send 10 signals to PHP workflow
+        for(int i=0; i < 10; i++) {
+            externalPHPWorkflowStub.signal("javaMessage", "Hello from Java Workflow: " + i);
+        }
 
         return result;
     }

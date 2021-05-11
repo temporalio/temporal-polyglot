@@ -38,6 +38,7 @@ func Workflow(ctx workflow.Context, name string) (string, error) {
 	err := workflow.SetQueryHandler(ctx, "queryGoInfo", func(input []byte) (string, error) {
 		return queryResult, nil
 	})
+	if err != nil {
 		log.Fatalln("SetQueryHandler failed", err.Error())
 	}
 
@@ -64,6 +65,11 @@ func Workflow(ctx workflow.Context, name string) (string, error) {
 	err = workflow.ExecuteActivity(ctx, "SayHello", "GoWorkflow").Get(ctx, &result)
 	logger.Info(fmt.Sprintf("Java Activity returns %v, %v", result, err))
 	retValues += result + "\n"
+
+	// Send 10 signals to PHP workflow
+	for i := 0; i < 10; i++ {
+		workflow.SignalExternalWorkflow(ctx, "simple-workflow-php", "", "goMessage", "Hello from Go workflow: "+strconv.Itoa(i)).Get(ctx, nil)
+	}
 
 	logger.Info("Simple Workflow ended with results.",
 		"result", retValues)
