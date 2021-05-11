@@ -4,6 +4,7 @@ This demo shows:
 * How to signal a Go Workflow from a Java workflow (and vice versa)
 * How to invoke an Activity written in Go from a Workflow written in Java (and vice versa)
 * How to query a Go Workflow from a Java Activity (and vice versa)
+* How to send signals from Java / Go Workflows to a PHP Workflow
 
 ### Running the demo
 
@@ -14,14 +15,22 @@ cd  docker-compose
 docker compose up
 ```
 
-2) Start the Go worker and starter:
+2) Start the PHP sample"
+```shell script
+cd app-php
+composer install
+./rr serve
+php app.php simple  
+```
+
+3) Start the Go worker and starter:
 ```shell script
 cd app-go
 go run worker/main.go
 go run starter/main.go
 ```
 
-3) Start the Java worker and starter:
+4) Start the Java worker and starter:
 ```shell script
 cd app-java
 mvn compile exec:java -Dexec.mainClass="org.simple.app.StartWorker"
@@ -58,4 +67,28 @@ Hello from Go workflow: 7
 Hello from Go workflow: 8
 Hello from Go workflow: 9
 Go Activity - hello from: JavaWorkflow Query result: This is a simple Java Workflow
+```
+
+3) Look at the results of your PHP workflow, you should get:
+```shell script
+Hello from Java Workflow: 0
+Hello from Java Workflow: 1
+Hello from Java Workflow: 2
+Hello from Java Workflow: 3
+Hello from Java Workflow: 4
+Hello from Java Workflow: 5
+Hello from Java Workflow: 6
+Hello from Java Workflow: 7
+Hello from Java Workflow: 8
+Hello from Java Workflow: 9
+Hello from Go workflow: 0
+Hello from Go workflow: 1
+Hello from Go workflow: 2
+Hello from Go workflow: 3
+Hello from Go workflow: 4
+Hello from Go workflow: 5
+Hello from Go workflow: 6
+Hello from Go workflow: 7
+Hello from Go workflow: 8
+Hello from Go workflow: 9
 ```
