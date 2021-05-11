@@ -1,0 +1,266 @@
+{
+  "program": {
+    "fileInfos": {
+      "../../node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "b3584bc5798ed422ce2516df360ffa9cf2d80b5eae852867db9ba3743145f895",
+        "signature": "b3584bc5798ed422ce2516df360ffa9cf2d80b5eae852867db9ba3743145f895",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2015.core.d.ts": {
+        "version": "46ee15e9fefa913333b61eaf6b18885900b139867d89832a515059b62cf16a17",
+        "signature": "46ee15e9fefa913333b61eaf6b18885900b139867d89832a515059b62cf16a17",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2015.generator.d.ts": {
+        "version": "cdccba9a388c2ee3fd6ad4018c640a471a6c060e96f1232062223063b0a5ac6a",
+        "signature": "cdccba9a388c2ee3fd6ad4018c640a471a6c060e96f1232062223063b0a5ac6a",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
+        "version": "8b2a5df1ce95f78f6b74f1a555ccdb6baab0486b42d8345e0871dd82811f9b9a",
+        "signature": "8b2a5df1ce95f78f6b74f1a555ccdb6baab0486b42d8345e0871dd82811f9b9a",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2015.promise.d.ts": {
+        "version": "2bb4b3927299434052b37851a47bf5c39764f2ba88a888a107b32262e9292b7c",
+        "signature": "2bb4b3927299434052b37851a47bf5c39764f2ba88a888a107b32262e9292b7c",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
+        "version": "810627a82ac06fb5166da5ada4159c4ec11978dfbb0805fe804c86406dab8357",
+        "signature": "810627a82ac06fb5166da5ada4159c4ec11978dfbb0805fe804c86406dab8357",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
+        "version": "62d80405c46c3f4c527ee657ae9d43fda65a0bf582292429aea1e69144a522a6",
+        "signature": "62d80405c46c3f4c527ee657ae9d43fda65a0bf582292429aea1e69144a522a6",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
+        "version": "3013574108c36fd3aaca79764002b3717da09725a36a6fc02eac386593110f93",
+        "signature": "3013574108c36fd3aaca79764002b3717da09725a36a6fc02eac386593110f93",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
+        "version": "9d122b7e8c1a5c72506eea50c0973cba55b92b5532d5cafa8a6ce2c547d57551",
+        "signature": "9d122b7e8c1a5c72506eea50c0973cba55b92b5532d5cafa8a6ce2c547d57551",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2016.array.include.d.ts": {
+        "version": "3be5a1453daa63e031d266bf342f3943603873d890ab8b9ada95e22389389006",
+        "signature": "3be5a1453daa63e031d266bf342f3943603873d890ab8b9ada95e22389389006",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2017.object.d.ts": {
+        "version": "17bb1fc99591b00515502d264fa55dc8370c45c5298f4a5c2083557dccba5a2a",
+        "signature": "17bb1fc99591b00515502d264fa55dc8370c45c5298f4a5c2083557dccba5a2a",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": {
+        "version": "7ce9f0bde3307ca1f944119f6365f2d776d281a393b576a18a2f2893a2d75c98",
+        "signature": "7ce9f0bde3307ca1f944119f6365f2d776d281a393b576a18a2f2893a2d75c98",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2017.string.d.ts": {
+        "version": "6a6b173e739a6a99629a8594bfb294cc7329bfb7b227f12e1f7c11bc163b8577",
+        "signature": "6a6b173e739a6a99629a8594bfb294cc7329bfb7b227f12e1f7c11bc163b8577",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2017.intl.d.ts": {
+        "version": "12a310447c5d23c7d0d5ca2af606e3bd08afda69100166730ab92c62999ebb9d",
+        "signature": "12a310447c5d23c7d0d5ca2af606e3bd08afda69100166730ab92c62999ebb9d",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": {
+        "version": "b0124885ef82641903d232172577f2ceb5d3e60aed4da1153bab4221e1f6dd4e",
+        "signature": "b0124885ef82641903d232172577f2ceb5d3e60aed4da1153bab4221e1f6dd4e",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/@temporalio/workflow/commonjs/global-overrides.d.ts": {
+        "version": "0ace87125677f2bfa38a4f1fefb39f472e7dde4b8ec81ca09d7b85914df9c46d",
+        "signature": "0ace87125677f2bfa38a4f1fefb39f472e7dde4b8ec81ca09d7b85914df9c46d",
+        "affectsGlobalScope": true
+      },
+      "../../node_modules/@temporalio/workflow/commonjs/interfaces.d.ts": {
+        "version": "931295f02221d2f27c3fabdf2b907e168c47ef4705c5d05c38950b0c59fa5a0c",
+        "signature": "931295f02221d2f27c3fabdf2b907e168c47ef4705c5d05c38950b0c59fa5a0c",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/long/index.d.ts": {
+        "version": "e8465811693dfe4e96ef2b3dffda539d6edfe896961b7af37b44db2c0e48532b",
+        "signature": "e8465811693dfe4e96ef2b3dffda539d6edfe896961b7af37b44db2c0e48532b",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/protobufjs/index.d.ts": {
+        "version": "1558c642e03689d42843e7b047b9c20e77ee09ab388ff854484db5dcfbed11da",
+        "signature": "1558c642e03689d42843e7b047b9c20e77ee09ab388ff854484db5dcfbed11da",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@temporalio/proto/commonjs/index.d.ts": {
+        "version": "337bcb20fdc4a62a006b7a6fb014d5d8e1e69707bb96eb941302e47caa5619be",
+        "signature": "337bcb20fdc4a62a006b7a6fb014d5d8e1e69707bb96eb941302e47caa5619be",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@temporalio/workflow/commonjs/errors.d.ts": {
+        "version": "66cc12973403222145484b7f3f63688b3ede420c11fccc88b75bd4ce3f3db5e6",
+        "signature": "66cc12973403222145484b7f3f63688b3ede420c11fccc88b75bd4ce3f3db5e6",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@temporalio/workflow/commonjs/workflow.d.ts": {
+        "version": "308adf6b3a2259a04322d6df341da755e9611fee20ff82e6e310e8d5e3752675",
+        "signature": "308adf6b3a2259a04322d6df341da755e9611fee20ff82e6e310e8d5e3752675",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@temporalio/workflow/commonjs/index.d.ts": {
+        "version": "f16768b391c98f4906db419eb40b1d99b47e89be88a8ed519109974a84c29b49",
+        "signature": "f16768b391c98f4906db419eb40b1d99b47e89be88a8ed519109974a84c29b49",
+        "affectsGlobalScope": false
+      },
+      "../interfaces/workflows.d.ts": {
+        "version": "cce278a5cf5d8583c63f0c21ff13aaf6bfb439bf8b0ef7ca215e632c412c0736",
+        "signature": "cce278a5cf5d8583c63f0c21ff13aaf6bfb439bf8b0ef7ca215e632c412c0736",
+        "affectsGlobalScope": false
+      },
+      "../activities/greeter.d.ts": {
+        "version": "4824e35765fd632b759cfc7b2d0b943e41549088069d78d090dd84f39e07a3f7",
+        "signature": "4824e35765fd632b759cfc7b2d0b943e41549088069d78d090dd84f39e07a3f7",
+        "affectsGlobalScope": false
+      },
+      "../../src/workflows/example.ts": {
+        "version": "ba60e9f9dea5d2d58b5092eb72a4a59d6c61d77d48b9b596cd7ab9ea0febb5a4",
+        "signature": "acb68ed9cf1a6250c11970b2fd29805dec9fbd986b5662179dd7ff5876b4c645",
+        "affectsGlobalScope": false
+      }
+    },
+    "options": {
+      "emitDecoratorMetadata": false,
+      "experimentalDecorators": false,
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "composite": true,
+      "incremental": true,
+      "rootDir": "../../src/workflows",
+      "lib": [
+        "lib.es5.d.ts",
+        "lib.es2015.core.d.ts",
+        "lib.es2015.generator.d.ts",
+        "lib.es2015.iterable.d.ts",
+        "lib.es2015.promise.d.ts",
+        "lib.es2015.proxy.d.ts",
+        "lib.es2015.reflect.d.ts",
+        "lib.es2015.symbol.d.ts",
+        "lib.es2015.symbol.wellknown.d.ts",
+        "lib.es2016.array.include.d.ts",
+        "lib.es2017.object.d.ts",
+        "lib.es2017.intl.d.ts",
+        "lib.es2017.sharedmemory.d.ts",
+        "lib.es2017.string.d.ts",
+        "lib.es2017.typedarrays.d.ts"
+      ],
+      "target": 4,
+      "module": 6,
+      "moduleResolution": 2,
+      "esModuleInterop": true,
+      "strict": true,
+      "typeRoots": [
+        "../../src/workflows"
+      ],
+      "outDir": "./",
+      "paths": {
+        "@activities": [
+          "../activities"
+        ],
+        "@activities/*": [
+          "../activities/*"
+        ],
+        "@interfaces": [
+          "../interfaces"
+        ],
+        "@interfaces/*": [
+          "../interfaces/*"
+        ]
+      },
+      "pathsBasePath": "/Users/tsurdilovic/devel/demos/temporal-polyglot/app-node/src/workflows",
+      "configFilePath": "../../src/workflows/tsconfig.json"
+    },
+    "referencedMap": {
+      "../interfaces/workflows.d.ts": [
+        "../../node_modules/@temporalio/workflow/commonjs/index.d.ts"
+      ],
+      "../../node_modules/@temporalio/proto/commonjs/index.d.ts": [
+        "../../node_modules/@types/long/index.d.ts",
+        "../../node_modules/protobufjs/index.d.ts"
+      ],
+      "../../node_modules/@temporalio/workflow/commonjs/errors.d.ts": [
+        "../../node_modules/@temporalio/proto/commonjs/index.d.ts"
+      ],
+      "../../node_modules/@temporalio/workflow/commonjs/index.d.ts": [
+        "../../node_modules/@temporalio/workflow/commonjs/errors.d.ts",
+        "../../node_modules/@temporalio/workflow/commonjs/global-overrides.d.ts",
+        "../../node_modules/@temporalio/workflow/commonjs/interfaces.d.ts",
+        "../../node_modules/@temporalio/workflow/commonjs/workflow.d.ts"
+      ],
+      "../../node_modules/@temporalio/workflow/commonjs/workflow.d.ts": [
+        "../../node_modules/@temporalio/workflow/commonjs/interfaces.d.ts"
+      ],
+      "../../src/workflows/example.ts": [
+        "../activities/greeter.d.ts",
+        "../interfaces/workflows.d.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "../interfaces/workflows.d.ts": [
+        "../../node_modules/@temporalio/workflow/commonjs/index.d.ts"
+      ],
+      "../../node_modules/@temporalio/proto/commonjs/index.d.ts": [
+        "../../node_modules/@types/long/index.d.ts",
+        "../../node_modules/protobufjs/index.d.ts"
+      ],
+      "../../node_modules/@temporalio/workflow/commonjs/errors.d.ts": [
+        "../../node_modules/@temporalio/proto/commonjs/index.d.ts"
+      ],
+      "../../node_modules/@temporalio/workflow/commonjs/index.d.ts": [
+        "../../node_modules/@temporalio/workflow/commonjs/errors.d.ts",
+        "../../node_modules/@temporalio/workflow/commonjs/global-overrides.d.ts",
+        "../../node_modules/@temporalio/workflow/commonjs/interfaces.d.ts",
+        "../../node_modules/@temporalio/workflow/commonjs/workflow.d.ts"
+      ],
+      "../../node_modules/@temporalio/workflow/commonjs/workflow.d.ts": [
+        "../../node_modules/@temporalio/workflow/commonjs/interfaces.d.ts"
+      ],
+      "../../src/workflows/example.ts": [
+        "../interfaces/workflows.d.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": [
+      "../activities/greeter.d.ts",
+      "../interfaces/workflows.d.ts",
+      "../../node_modules/@temporalio/proto/commonjs/index.d.ts",
+      "../../node_modules/@temporalio/workflow/commonjs/errors.d.ts",
+      "../../node_modules/@temporalio/workflow/commonjs/global-overrides.d.ts",
+      "../../node_modules/@temporalio/workflow/commonjs/index.d.ts",
+      "../../node_modules/@temporalio/workflow/commonjs/interfaces.d.ts",
+      "../../node_modules/@temporalio/workflow/commonjs/workflow.d.ts",
+      "../../node_modules/@types/long/index.d.ts",
+      "../../node_modules/protobufjs/index.d.ts",
+      "../../node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "../../node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "../../node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "../../node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "../../node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "../../node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "../../node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "../../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "../../node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "../../node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "../../node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "../../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "../../node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "../../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "../../node_modules/typescript/lib/lib.es5.d.ts",
+      "../../src/workflows/example.ts"
+    ]
+  },
+  "version": "4.2.4"
+}

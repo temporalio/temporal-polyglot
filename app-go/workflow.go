@@ -1,11 +1,13 @@
 package simple
 
 import (
+	"errors"
 	"fmt"
 	"log"
 	"strconv"
 	"time"
 
+	"go.temporal.io/sdk/temporal"
 	"go.temporal.io/sdk/workflow"
 )
 
@@ -73,6 +75,26 @@ func Workflow(ctx workflow.Context, name string) (string, error) {
 
 	logger.Info("Simple Workflow ended with results.",
 		"result", retValues)
+
+	// Call Node activity and add its error
+
+	// max attempts set to 1 for demo purposes
+	retryPolicy := &temporal.RetryPolicy{
+		MaximumAttempts: 1,
+	}
+	aon := workflow.ActivityOptions{
+		TaskQueue:           "simple-queue-node",
+		StartToCloseTimeout: 3 * time.Second,
+		RetryPolicy:         retryPolicy,
+	}
+	ctx = workflow.WithActivityOptions(ctx, aon)
+	err = workflow.ExecuteActivity(ctx, "[\"@activities/nodeactivity\", \"nodeActivity\"]").Get(ctx, nil)
+	if err != nil {
+		var applicationErr *temporal.ActivityError
+		if errors.As(err, &applicationErr) {
+			retValues += "Error from Node Activity: " + applicationErr.Unwrap().Error() + "\n"
+		}
+	}
 
 	return retValues, nil
 }

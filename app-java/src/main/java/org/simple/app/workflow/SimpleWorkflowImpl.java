@@ -1,6 +1,8 @@
 package org.simple.app.workflow;
 
+import com.google.common.base.Throwables;
 import io.temporal.activity.ActivityOptions;
+import io.temporal.common.RetryOptions;
 import io.temporal.workflow.ActivityStub;
 import io.temporal.workflow.ExternalWorkflowStub;
 import io.temporal.workflow.Workflow;
@@ -46,6 +48,26 @@ public class SimpleWorkflowImpl implements SimpleWorkflow {
         // Send 10 signals to PHP workflow
         for(int i=0; i < 10; i++) {
             externalPHPWorkflowStub.signal("javaMessage", "Hello from Java Workflow: " + i);
+        }
+
+        // Call the Node Activity
+        ActivityOptions nodeOptions =
+                ActivityOptions.newBuilder()
+                        .setStartToCloseTimeout(Duration.ofSeconds(3))
+                        .setTaskQueue("simple-queue-node")
+                        // setting max retry attempts to 1 for demo purposes only
+                        .setRetryOptions(
+                                RetryOptions.newBuilder()
+                                        .setMaximumAttempts(1)
+                                        .build()
+                        )
+                        .build();
+        ActivityStub nodeActivity = Workflow.newUntypedActivityStub(nodeOptions);
+        try {
+            nodeActivity.execute("[\"@activities/nodeactivity\", \"nodeActivity\"]", String.class, "JavaWorkflow");
+        } catch (Exception e) {
+            Throwable cause = Throwables.getRootCause(e);
+            result += "Error from Node Activity: " + cause.getMessage();
         }
 
         return result;

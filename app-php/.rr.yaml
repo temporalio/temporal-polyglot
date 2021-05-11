@@ -7,7 +7,7 @@ server:
 temporal:
   address: "localhost:7233"
   activities:
-    num_workers: 10
+    num_workers: 1
 
 logs:
   level: debug
