@@ -25,12 +25,18 @@ cd  docker-compose
 docker compose up
 ```
 
+Note: The sample apps in different languages should be started in 
+the shown order. They should be started within 3 minutes from each other.
+You can set different Workflow execution timeouts to change this if you wish.
+
 2) Start the Node sample:
 ```shell script
 cd app-node
 npm install
 npm start
 ```
+
+"npm install" does not have to be run each time, only when changes are made.
 
 3) Start the PHP sample:
 ```shell script
@@ -39,6 +45,8 @@ composer install
 ./rr serve
 php app.php simple  
 ```
+
+"composer install" does not have to be run each time.
 
 4) Start the Go worker and starter:
 ```shell script
