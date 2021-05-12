@@ -3,6 +3,7 @@ package org.simple.app.workflow;
 import com.google.common.base.Throwables;
 import io.temporal.activity.ActivityOptions;
 import io.temporal.common.RetryOptions;
+import io.temporal.failure.ApplicationFailure;
 import io.temporal.workflow.ActivityStub;
 import io.temporal.workflow.ExternalWorkflowStub;
 import io.temporal.workflow.Workflow;
@@ -67,7 +68,8 @@ public class SimpleWorkflowImpl implements SimpleWorkflow {
             nodeActivity.execute("[\"@activities/nodeactivity\", \"nodeActivity\"]", String.class, "JavaWorkflow");
         } catch (Exception e) {
             Throwable cause = Throwables.getRootCause(e);
-            result += "Error from Node Activity: " + cause.getMessage();
+            ApplicationFailure applicationFailure = (ApplicationFailure) cause;
+            result += "\nError from Node Activity: " + applicationFailure.getOriginalMessage();
         }
 
         return result;

@@ -49,7 +49,7 @@ class SimpleWorkflow implements SimpleWorkflowInterface
             yield Workflow::executeActivity('["@activities/nodeactivity", "nodeActivity"]', ["From PHP Workflow"], $options);
         } catch(Failure\ActivityFailure $e) {
             $cause = $e->getPrevious();
-            $this->results .= $cause->getOriginalMessage() . "\n";
+            $this->results .= "Error from Node Activity: " . $cause->getOriginalMessage() . "\n";
         }
     
         
