@@ -15,7 +15,7 @@ This demo uses the following Temporal SDKs:
 It shows interactions between Workflows and Activities written in different 
 programming languages using the Temporal SDKs.
 
-Interactions between workflows and activities:
+Interactions between Workflows and Activities:
 
 1. Java Workflow signals Go Workflow (10 times)
 2. Go Workflow signals Java Workflow (10 times)
@@ -23,8 +23,8 @@ Interactions between workflows and activities:
 4. Go Activity queries Java Workflow
 5. Go Workflow invokes Java Activity
 6. Java Activity queries Go Workflow
-7. Java Workflow signals PHP Workflow
-8. Go Workflow signals PHP Workflow
+7. Java Workflow signals PHP Workflow (10 times)
+8. Go Workflow signals PHP Workflow (10 times)
 9. Java Workflow invokes NodeJS Activity and propagates its error 
 10. Go Workflow invokes NodeJS Activity and propagates its error
 11. PHP Wokflow invokes NodeJS Activity and propagates its error
