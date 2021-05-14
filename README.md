@@ -12,8 +12,8 @@ This demo uses the following Temporal SDKs:
 * [PHP](https://docs.temporal.io/docs/php/introduction)
 * [Node](https://docs.temporal.io/docs/node/introduction)
 
-It shows interactions between Workflows and Activities written in different 
-programming languages using the Temporal SDKs.
+It shows how Temporal can act as a service orchestrator and mediator between 
+different distributed applications written in different programming languages.
 
 Interactions between Workflows and Activities:
 
