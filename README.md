@@ -1,5 +1,11 @@
 ## Temporal Simple Polyglot example
 
+
+<p align="center">
+<img src="img/polyglot-overview.png" height="500px" alt="App Overview"/>
+</p>
+
+
 This demo uses the following Temporal SDKs:
 * [Java](https://docs.temporal.io/docs/java/introduction)
 * [Go](https://docs.temporal.io/docs/go/introduction)
@@ -9,12 +15,19 @@ This demo uses the following Temporal SDKs:
 It shows interactions between Workflows and Activities written in different 
 programming languages using the Temporal SDKs.
 
-Some of the things the demo includes:
-* How to signal a Go Workflow from a Java workflow (and vice versa)
-* How to invoke an Activity written in Go from a Workflow written in Java (and vice versa)
-* How to query a Go Workflow from a Java Activity (and vice versa)
-* How to send signals from Java / Go Workflows to a PHP Workflow
-* Error propagation from Node Activity to Java / Go / PHP Workflows
+Interactions between workflows and activities:
+
+1. Java Workflow signals Go Workflow (10 times)
+2. Go Workflow signals Java Workflow (10 times)
+3. Java Workflow invokes a Go Activity
+4. Go Activity queries Java Workflow
+5. Go Workflow invokes Java Activity
+6. Java Activity queries Go Workflow
+7. Java Workflow signals PHP Workflow
+8. Go Workflow signals PHP Workflow
+9. Java Workflow invokes NodeJS Activity and propagates its error 
+10. Go Workflow invokes NodeJS Activity and propagates its error
+11. PHP Wokflow invokes NodeJS Activity and propagates its error
 
 ### Running the demo
 
