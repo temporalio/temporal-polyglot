@@ -2,6 +2,7 @@
 *.out
 *.test
 *.xml
+!pom.xml
 *.swp
 .idea/
 *.iml
