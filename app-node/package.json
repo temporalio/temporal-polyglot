@@ -12,6 +12,6 @@
   },
   "name": "app-node",
   "dependencies": {
-    "temporalio": "^0.1.7"
+    "temporalio": "^0.20.0"
   }
 }
