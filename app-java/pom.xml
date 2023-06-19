@@ -11,7 +11,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <temporal-sdk.version>1.13.0</temporal-sdk.version>
+        <temporal-sdk.version>1.14.0</temporal-sdk.version>
     </properties>
 
     <dependencies>
